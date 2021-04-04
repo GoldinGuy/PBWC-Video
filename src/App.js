@@ -1,8 +1,21 @@
 import VideoChat from "catalyst-vc-react";
 import "./App.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
+import { useEffect } from "react";
 const App = () => {
 	const location = useLocation();
+	const history = useHistory();
+
+	useEffect(() => {
+		if (location.pathname === "/") {
+			history.push(
+				window.prompt(
+					"Please enter your Palm Beach Women's Counseling Session Name: ",
+					"Enter Session Name"
+				)
+			);
+		}
+	}, []);
 
 	return (
 		<VideoChat
