@@ -9,6 +9,7 @@ const App = () => {
 			sessionKey={location.pathname.substring(1)}
 			uniqueAppId="8652c9ca-1131-4f23-833d-485083fbda6f"
 			themeColor="#D46AB7"
+			defaults={{ audioOn: false }}
 		/>
 	);
 };
