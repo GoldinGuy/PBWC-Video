@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import VideoChat from "catalyst-vc-react";
+import "./App.css";
+import { useLocation } from "react-router-dom";
+const App = () => {
+	const location = useLocation();
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+	return (
+		<VideoChat
+			sessionKey={location.pathname.substring(1)}
+			uniqueAppId="8652c9ca-1131-4f23-833d-485083fbda6f"
+			themeColor="#D46AB7"
+		/>
+	);
+};
 
 export default App;
