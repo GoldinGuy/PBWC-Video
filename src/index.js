@@ -10,7 +10,7 @@ ReactDOM.render(
 		<BrowserRouter basename="/">
 			<Switch>
 				<Route path="/:id" exact component={App} />
-				{/* <Redirect path="/" to="/waiting_room" /> */}
+				<Redirect path="/" to="/WaitingRoom" />
 			</Switch>
 		</BrowserRouter>
 	</React.StrictMode>,
