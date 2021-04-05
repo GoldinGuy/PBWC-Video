@@ -1,13 +1,11 @@
 import VideoChat from "catalyst-vc-react";
 import "./App.css";
-import { useLocation, useHistory } from "react-router-dom";
 import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 const App = () => {
-	const location = useLocation();
 	const history = useHistory();
-
 	useEffect(() => {
-		if (location.pathname === "/") {
+		if (window.location.pathname === "/") {
 			history.push(
 				window.prompt(
 					"Please enter your Palm Beach Women's Counseling Session Name: ",
@@ -15,16 +13,16 @@ const App = () => {
 				)
 			);
 		}
-	}, []);
+	}, [history]);
 
 	return (
 		<VideoChat
-			sessionKey={location.pathname.substring(1)}
+			sessionKey={window.location.pathname.substring(1)}
 			uniqueAppId="8652c9ca-1131-4f23-833d-485083fbda6f"
 			themeColor="#D46AB7"
 			defaults={{ audioOn: false }}
 			onEndCall={() =>
-				(window.location = "https://palmbeachwomenscounseling.com/")
+				(window.location.href = "https://palmbeachwomenscounseling.com/")
 			}
 		/>
 	);

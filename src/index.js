@@ -3,12 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<App />
+		<BrowserRouter basename="/">
+			<Switch>
+				<Route path="/:id" exact component={App} />
+				{/* <Redirect path="/" to="/waiting_room" /> */}
+			</Switch>
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById("root")
